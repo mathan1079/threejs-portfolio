@@ -209,7 +209,7 @@ const projects = [
       },
     ],
     image: crowdfunding,
-    source_code_link: "https://github.com/gokul1414",
+    source_code_link: "https://github.com/gokul1414/CrowdFunding",
   },
   {
     name: "Blog App",
