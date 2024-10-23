@@ -266,7 +266,7 @@ const socialLinks = [
   {
     username: "gokul1414",
     platform: "Github",
-    url: "https://github.com/gokul1414",
+    url: "https://github.com/dev-gokul-c",
     image: github_icon,
   },
   {
