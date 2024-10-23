@@ -1,0 +1,12 @@
+[build]
+  # Command to install dependencies and build the project
+  command = "npm install --legacy-peer-deps && npm run build"
+  
+  # Directory where the built site is output (adjust if your build directory differs)
+  publish = "build"
+
+  # You can specify the Node and NPM versions if needed
+  [build.environment]
+    NODE_VERSION = "18.x"
+    NPM_VERSION = "10.x"
+
