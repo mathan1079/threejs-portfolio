@@ -209,7 +209,7 @@ const projects = [
       },
     ],
     image: crowdfunding,
-    source_code_link: "https://github.com/dev-gokul-c",
+    source_code_link: "https://github.com/G0kulC",
   },
   {
     name: "Blog App",
@@ -231,7 +231,7 @@ const projects = [
       
     ],
     image: blog_web,
-    source_code_link: "https://github.com/dev-gokul-c",
+    source_code_link: "https://github.com/G0kulC",
   },
   {
     name: "Quzi[Quora-Inspired]",
@@ -252,7 +252,7 @@ const projects = [
       },
     ],
     image: quora_project,
-    source_code_link: "https://github.com/dev-gokul-c/Quora-Clone",
+    source_code_link: "https://github.com/G0kulC/Quora-Clone",
   },
 ];
 
@@ -266,7 +266,7 @@ const socialLinks = [
   {
     username: "Gokul C",
     platform: "Github",
-    url: "https://github.com/dev-gokul-c",
+    url: "https://github.com/G0kulC",
     image: github_icon,
   },
   {
