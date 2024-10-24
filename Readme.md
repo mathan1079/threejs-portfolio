@@ -37,11 +37,11 @@ Check out the live version here: [Live Demo Link](#)(https://gokuldev.netlify.ap
    git clone https://github.com/G0kulC/threejs-portfolio
    ```
 2. Go to the project folder:
-```bash
-cd 3d-portfolio
-(Optional) Install dependencies:
-npm install
-```
+   ```bash
+   cd 3d-portfolio
+   (Optional) Install dependencies:
+   npm install
+   ```
 3. Usage:
 To start the project locally:
 Run the local server:
