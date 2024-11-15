@@ -19,6 +19,7 @@ import {
   crowdfunding,
   quora_project,
   portfoliomailer,
+  threejs_portfolio,
   portfolio_cms,
   backenkarchitecture,
   blog_web,
@@ -32,6 +33,7 @@ import {
   gmail,
   instagram,
   best_teamof_year,
+  givicert,
 } from "../assets";
 
 export const navLinks = [
@@ -42,7 +44,8 @@ export const navLinks = [
   {
     id: "work",
     title: "Career",
-  },  {
+  },
+  {
     id: "awards",
     title: "Awards",
   },
@@ -70,6 +73,7 @@ const personalDetails = {
   linkedin: "https://www.linkedin.com/in/gokul-dev/",
   github: "https://github.com/G0kulC",
   github_username: "G0kulC",
+  resume_link: "https://drive.usercontent.google.com/u/0/uc?id=1ujBXNrzEFgDJYZE8zGM_GVJwiux8viRv", //remove params Ex: ?view=preview and last /
   fav_emoji: "💜",
 };
 
@@ -105,6 +109,20 @@ const awards = [
     ],
     year_of_award: "2024",
     image: best_teamof_year,
+  },
+  // Python Programming – GUVI (Google for Education Partner, ISO 9001-27001 Certified)
+  {
+    title: "Python Programming",
+    company_name: "GUVI (ISO 9001-27001 Certified)",
+    location: "Coimbatore",
+    points: [
+      "Gokul C is awarded the certificate of achievement for completing Python Programming.",
+      "Covered topics include data structures, algorithms, and OOP.",
+      "Certificate recognizes dedication, commitment, and expertise.",
+      "Part of ongoing efforts to enhance programming skills for career growth.",
+    ],
+    year_of_award: "2022",
+    image: givicert,
   },
 ];
 
@@ -299,6 +317,28 @@ const projects = [
     image: backenkarchitecture,
     source_code_link: "https://github.com/G0kulC/fastapi-backend",
     project_date: "2024-10-23T17:00:00Z",
+  },
+  {
+    name: "Personal Portfolio",
+    description:
+      "This is my personal interactive portfolio, built to display my projects in an engaging and visually appealing environment. Developed with Three.js, it allows users to explore my work through smooth animations and responsive design.",
+    tags: [
+      {
+        name: "vite",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "threejs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "green-text-gradient",
+      },
+    ],
+    image: threejs_portfolio,
+    source_code_link: "https://github.com/G0kulC/threejs-portfolio",
+    project_date: "2023-12-13T17:00:00Z",
   },
   {
     name: "Crowd Funding",

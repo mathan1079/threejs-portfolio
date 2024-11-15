@@ -1,12 +1,12 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
 import CanvasLoader from "./Loader";
 
 const Computers = ({ isMobile, isTablet }) => {
+  // useGLTF is called here, within a child of Canvas
   const computer = useGLTF("./desktop_pc/scene.gltf");
-
+  
   return (
     <mesh>
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -39,10 +39,7 @@ const ComputersCanvas = () => {
       setIsTablet(window.innerWidth > 500 && window.innerWidth <= 1024);
     };
 
-    // Set initial values
     updateDeviceType();
-
-    // Update on resize
     window.addEventListener("resize", updateDeviceType);
 
     return () => window.removeEventListener("resize", updateDeviceType);
@@ -67,7 +64,6 @@ const ComputersCanvas = () => {
         />
         <Computers isMobile={isMobile} isTablet={isTablet} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

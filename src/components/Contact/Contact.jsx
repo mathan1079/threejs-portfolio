@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../../styles";
-import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
 import { socialLinks } from "../../constants";
 import ContactForm from "./ContactForm";
+
+// Lazy-load the EarthCanvas component
+const EarthCanvas = lazy(() => import("../canvas/Earth"));
 
 const Contact = () => {
   const isMobile = window.innerWidth <= 768;
@@ -44,7 +46,9 @@ const Contact = () => {
           variants={slideIn("right", "tween", 0.2, 1)}
           className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
         >
-          <EarthCanvas />
+          <Suspense fallback={<div>Loading...</div>}>
+            <EarthCanvas />
+          </Suspense>
         </motion.div>
       )}
     </div>

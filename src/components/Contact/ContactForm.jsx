@@ -34,7 +34,7 @@ const ContactForm = () => {
 
     try {
       setIsLoading(true);
-      await axios.post(`https://portfoliomailer-backend.onrender.com/`, {
+      await axios.post(`https://portfoliomailer-backend.onrender.com/send-email`, {
         ...userInput,
         to_email: personalDetails.email,
       });

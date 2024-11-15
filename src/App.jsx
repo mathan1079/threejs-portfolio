@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import BackToTopButton from "./components/Resume/GetResume";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
@@ -36,6 +37,7 @@ const App = () => {
           <Footer />
         </div>
       </div>
+      <BackToTopButton />
       <ToastContainer
         position="top-right"
         autoClose={3000}
