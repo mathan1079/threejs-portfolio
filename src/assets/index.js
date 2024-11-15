@@ -4,6 +4,7 @@ import software from "./software.png";
 import python from "./python.png";
 import web from "./web.png";
 import github from "./github.png";
+import live from "./live.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -29,9 +30,12 @@ import novitech from "./company/novitech.png";
 import dotworld from "./company/dotworld.png";
 import accenttechnosoft from "./company/accenttechnosoft.png";
 
-import crowdfunding from "./crowdfunding.png";
-import quora_project from "./quora-project.png";
-import blog_web from "./blog_web.png";
+import crowdfunding from "./projects/crowdfunding.jpg";
+import quora_project from "./projects/quora-project.png";
+import portfoliomailer from "./projects/portfoliomailer.jpg";
+import blog_web from "./projects/blog_web.jpg";
+import portfolio_cms from "./projects/portfolio_cms.jpg";
+import backenkarchitecture from "./projects/backenkarchitecture.jpg";
 
 import elonmusk from "./peoples/musk.jpeg";
 import apj_kalam from "./peoples/apj-kalam.jpeg";
@@ -42,8 +46,14 @@ import github_icon from "./social/github.png";
 import gmail from "./social/gmail.png";
 import instagram from "./social/instagram.png";
 
+// Awards
+import best_teamof_year from "./awards/best_teamof_year.jpg";
 
 export {
+  best_teamof_year,
+  backenkarchitecture,
+  portfolio_cms,
+  live,
   logo,
   backend,
   software,
@@ -81,5 +91,6 @@ export {
   linkedin,
   github_icon,
   gmail,
-  instagram
+  instagram,
+  portfoliomailer
 };
