@@ -5,6 +5,7 @@ import { Decal, Float, OrbitControls, Preload, useTexture } from "@react-three/d
 import CanvasLoader from "./Loader";
 
 const Ball = ({ imgUrl, isMobile }) => {
+  // Directly call the useTexture hook at the top level
   const [decal] = useTexture([imgUrl]);
 
   return (
@@ -37,7 +38,6 @@ const BallCanvas = ({ icon }) => {
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} isMobile={isMobile} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );

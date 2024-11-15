@@ -36,6 +36,7 @@ import portfoliomailer from "./projects/portfoliomailer.jpg";
 import blog_web from "./projects/blog_web.jpg";
 import portfolio_cms from "./projects/portfolio_cms.jpg";
 import backenkarchitecture from "./projects/backenkarchitecture.jpg";
+import threejs_portfolio from "./projects/threejs_portfolio.jpg";
 
 import elonmusk from "./peoples/musk.jpeg";
 import apj_kalam from "./peoples/apj-kalam.jpeg";
@@ -48,8 +49,12 @@ import instagram from "./social/instagram.png";
 
 // Awards
 import best_teamof_year from "./awards/best_teamof_year.jpg";
+import givicert from "./awards/givicert.png";
+
 
 export {
+  threejs_portfolio,
+  givicert,
   best_teamof_year,
   backenkarchitecture,
   portfolio_cms,

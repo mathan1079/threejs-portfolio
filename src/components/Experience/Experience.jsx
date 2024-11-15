@@ -4,7 +4,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../../styles";
@@ -18,7 +17,7 @@ const ExperienceCard = ({ experience }) => {
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
-        padding: "20px",
+        padding: "1.25rem", // Use rem for responsive padding
       }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
@@ -34,11 +33,11 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className="text-white text-[20px] sm:text-[24px] font-bold">
+        <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold">
           {experience.title}
         </h3>
         <p
-          className="text-secondary text-[14px] sm:text-[16px] font-semibold"
+          className="text-secondary text-sm sm:text-base md:text-lg font-semibold"
           style={{ margin: 0 }}
         >
           <a href={experience.link} target="_blank" rel="noopener noreferrer">
@@ -47,11 +46,11 @@ const ExperienceCard = ({ experience }) => {
         </p>
       </div>
 
-      <ul className="mt-4 list-disc ml-4 sm:ml-5 space-y-2">
+      <ul className="mt-4 list-disc ml-5 space-y-2">
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-[12px] sm:text-[14px] pl-1 tracking-wider"
+            className="text-white-100 text-xs sm:text-sm md:text-base pl-1 tracking-wide"
           >
             {point}
           </li>
@@ -64,16 +63,16 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
+      <motion.div variants={textVariant()} className="px-4 sm:px-0">
+        <p className={`${styles.sectionSubText} text-center text-sm sm:text-base md:text-lg`}>
           What I have done so far
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-        Career Timeline.
+        <h2 className={`${styles.sectionHeadText} text-center text-2xl sm:text-3xl md:text-4xl`}>
+          Career Timeline.
         </h2>
       </motion.div>
 
-      <div className="mt-10 sm:mt-20 flex flex-col">
+      <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
