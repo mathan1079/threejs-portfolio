@@ -5,6 +5,7 @@ import { styles } from "../../styles";
 import { navLinks } from "../../constants";
 import { menu, close } from "../../assets";
 import { personalDetails } from "../../constants";
+import { r } from "maath/dist/misc-7d870b3c.esm";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -41,6 +42,7 @@ const Navbar = () => {
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
+            window.location.reload();
           }}
         >
           {/* Logo or Name */}
