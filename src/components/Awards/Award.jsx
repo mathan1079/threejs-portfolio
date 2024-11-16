@@ -41,7 +41,6 @@ const AwardsCard = ({
           <ul className="list-disc ml-4 sm:ml-5 space-y-2">
             {points.map((point, index) => (
               <li
-                key={`experience-point-${index}`}
                 className="text-secondary text-[12px] sm:text-[14px] pl-1 tracking-wider"
               >
                 {point}
@@ -84,7 +83,8 @@ const Awards = () => {
   const [showAll, setShowAll] = useState(false);
 
   const showMoreAwards = () => {
-    if (visibleCount + 3 >= awards.length) { // Use `awards` instead of `projects`
+    if (visibleCount + 3 >= awards.length) {
+      // Use `awards` instead of `projects`
       setVisibleCount(awards.length);
       setShowAll(true);
     } else {
@@ -108,27 +108,28 @@ const Awards = () => {
         </h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-sm sm:text-base max-w-full sm:max-w-3xl leading-[20px] sm:leading-[30px] px-4 sm:px-0 text-center sm:text-left"
-        >
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-3 text-secondary text-sm sm:text-base max-w-full sm:max-w-3xl leading-[20px] sm:leading-[30px] px-4 sm:px-0 text-center sm:text-left"
+      >
+        <div className="w-full flex">
           Recognized for multiple achievements that showcase my dedication to
           innovation, collaboration, and excellence. These awards reflect my
           ability to deliver impactful results, foster teamwork, and contribute
           to meaningful projects. Each milestone represents my ongoing
           commitment to professional growth and success.
-        </motion.p>
-      </div>
+        </div>
+      </motion.p>
 
       <div className="mt-8 sm:mt-20 flex flex-wrap gap-5 sm:gap-7 justify-center">
         {awards.slice(0, visibleCount).map((project, index) => (
-          <AwardsCard
-            key={`project-${index}`}
-            index={index}
-            isInitialSet={index < 6}
-            {...project}
-          />
+          <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} >
+            <AwardsCard
+              index={index}
+              isInitialSet={index < 4}
+              {...project}
+            />
+          </motion.div>
         ))}
       </div>
 

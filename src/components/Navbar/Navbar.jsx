@@ -5,7 +5,6 @@ import { styles } from "../../styles";
 import { navLinks } from "../../constants";
 import { menu, close } from "../../assets";
 import { personalDetails } from "../../constants";
-import { r } from "maath/dist/misc-7d870b3c.esm";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -55,7 +54,6 @@ const Navbar = () => {
         <ul className="hidden md:flex flex-row gap-6">
           {navLinks.map((nav) => (
             <li
-              key={nav.id}
               className={`${
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[14px] sm:text-[16px] font-medium cursor-pointer`}
@@ -76,14 +74,15 @@ const Navbar = () => {
           />
           {/* Mobile Dropdown Menu */}
           <div
-            className={`${
-              toggle ? "flex" : "hidden"
-            } p-5 bg-primary absolute top-16 right-4 w-[75%] max-w-xs rounded-lg shadow-lg z-20`}
+            className={`absolute top-16 right-4 w-[75%] max-w-xs rounded-lg shadow-lg z-20 bg-primary transform transition-all duration-300 ease-in-out ${
+              toggle
+                ? "translate-y-0 opacity-100 scale-100"
+                : "-translate-y-5 opacity-0 scale-95"
+            }`}
           >
-            <ul className="flex flex-col gap-4 text-left">
+            <ul className="flex flex-col gap-4 text-left p-5">
               {navLinks.map((nav) => (
                 <li
-                  key={nav.id}
                   className={`${
                     active === nav.title ? "text-white" : "text-secondary"
                   } font-medium text-[16px] cursor-pointer`}

@@ -9,7 +9,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../../styles";
 import { experiences } from "../../constants";
 import { SectionWrapper } from "../../hoc";
-import { textVariant } from "../../utils/motion";
+import { textVariant, fadeIn } from "../../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   return (
@@ -64,23 +64,29 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()} className="px-4 sm:px-0">
-        <p className={`${styles.sectionSubText} text-center text-sm sm:text-base md:text-lg`}>
+        <p
+          className={`${styles.sectionSubText} text-center text-sm sm:text-base md:text-lg`}
+        >
           What I have done so far
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center text-2xl sm:text-3xl md:text-4xl`}>
+        <h2
+          className={`${styles.sectionHeadText} text-center text-2xl sm:text-3xl md:text-4xl`}
+        >
           Career Timeline.
         </h2>
       </motion.div>
 
       <div className="mt-8 sm:mt-12 md:mt-16 flex flex-col">
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
+        <motion.div variants={fadeIn("", "", 0.1, 1)}>
+          <VerticalTimeline>
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={`experience-${index}`}
+                experience={experience}
+              />
+            ))}
+          </VerticalTimeline>
+        </motion.div>
       </div>
     </>
   );
