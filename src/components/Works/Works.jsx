@@ -16,7 +16,6 @@ projects.sort((a, b) => {
   return dateB - dateA;
 });
 
-
 const ProjectCard = ({
   index,
   name,
@@ -66,14 +65,19 @@ const ProjectCard = ({
         )}
       </div>
       <div className="mt-3 sm:mt-4">
-        <h3 className="text-white font-bold text-base sm:text-[24px]">{name}</h3>
+        <h3 className="text-white font-bold text-base sm:text-[24px]">
+          {name}
+        </h3>
         <p className="mt-2 text-secondary text-xs sm:text-sm line-clamp-3 sm:line-clamp-6">
           {description}
         </p>
       </div>
       <div className="mt-3 flex flex-wrap gap-1 sm:gap-2">
         {tags.map((tag) => (
-          <p key={`${name}-${tag.name}`} className={`text-[10px] sm:text-[14px] ${tag.color}`}>
+          <p
+            key={`${name}-${tag.name}`}
+            className={`text-[10px] sm:text-[14px] ${tag.color}`}
+          >
             #{tag.name}
           </p>
         ))}
@@ -126,21 +130,26 @@ const Projects = () => {
         </h2>
       </motion.div>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-sm sm:text-base max-w-full sm:max-w-3xl leading-[20px] sm:leading-[30px] px-4 sm:px-0 text-center sm:text-left"
-        >
-          These projects highlight my skills and experience through real-world examples, showcasing
-          my ability to solve complex problems, work with various technologies, and manage projects
-          effectively. Each includes a brief description with links to code repositories and live
-          demos.
-        </motion.p>
-      </div>
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="mt-3 text-secondary text-sm sm:text-base max-w-full sm:max-w-3xl leading-[20px] sm:leading-[30px] px-4 sm:px-0 text-center sm:text-left"
+      >
+        <div className="w-full flex">
+          These projects highlight my skills and experience through real-world
+          examples, showcasing my ability to solve complex problems, work with
+          various technologies, and manage projects effectively. Each includes a
+          brief description with links to code repositories and live demos.
+        </div>
+      </motion.p>
 
       <div className="mt-8 sm:mt-20 flex flex-wrap gap-5 sm:gap-7 justify-center">
         {projects.slice(0, visibleCount).map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} isInitialSet={index < 6} {...project} />
+          <ProjectCard
+            key={`project-${index}`}
+            index={index}
+            isInitialSet={index < 6}
+            {...project}
+          />
         ))}
       </div>
 

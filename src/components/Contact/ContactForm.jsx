@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { personalDetails } from "../../constants";
 
 const ContactForm = () => {
-  const [error, setError] = useState({ email: false, required: false });
+  const [errors, setErrors] = useState({ email: "", required: "" });
   const [isLoading, setIsLoading] = useState(false);
   const [userInput, setUserInput] = useState({
     name: "",
@@ -15,22 +15,30 @@ const ContactForm = () => {
 
   const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
-  const checkRequired = () => {
-    if (userInput.email && userInput.message && userInput.name) {
-      setError({ ...error, required: false });
+  const validateForm = () => {
+    let valid = true;
+
+    if (!userInput.name || !userInput.email || !userInput.message) {
+      setErrors({ ...errors, required: "All fields are required!" });
+      valid = false;
+    } else {
+      setErrors({ ...errors, required: "" });
     }
+
+    if (userInput.email && !isValidEmail(userInput.email)) {
+      setErrors((prev) => ({ ...prev, email: "Please provide a valid email!" }));
+      valid = false;
+    } else {
+      setErrors((prev) => ({ ...prev, email: "" }));
+    }
+
+    return valid;
   };
 
   const handleSendMail = async (e) => {
     e.preventDefault();
 
-    if (!userInput.email || !userInput.message || !userInput.name) {
-      setError({ ...error, required: true });
-      return;
-    } else if (!isValidEmail(userInput.email)) {
-      setError({ ...error, email: true });
-      return;
-    }
+    if (!validateForm()) return;
 
     try {
       setIsLoading(true);
@@ -39,10 +47,7 @@ const ContactForm = () => {
         to_email: personalDetails.email,
       });
 
-      // Custom success message
-      toast.success(
-        "Your message has been submitted. I will reach out to you soon!"
-      );
+      toast.success("Your message has been submitted. I will reach out to you soon!");
       setUserInput({ name: "", email: "", message: "" });
     } catch (error) {
       toast.error("Error sending message, please try again.");
@@ -57,12 +62,12 @@ const ContactForm = () => {
         <label className="text-sm">Your Name:</label>
         <input
           type="text"
-          className="bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#16f2b3] px-3 py-2"
-          required
+          className={`bg-[#10172d] border rounded-md px-3 py-2 ${
+            errors.required && !userInput.name ? "border-red-400" : "border-[#353a52]"
+          } focus:border-[#16f2b3]`}
           maxLength="100"
           value={userInput.name}
           onChange={(e) => setUserInput({ ...userInput, name: e.target.value })}
-          onBlur={checkRequired}
         />
       </div>
 
@@ -70,45 +75,38 @@ const ContactForm = () => {
         <label className="text-sm">Your Email:</label>
         <input
           type="email"
-          className="bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#16f2b3] px-3 py-2"
-          required
+          className={`bg-[#10172d] border rounded-md px-3 py-2 ${
+            ( errors.required && !userInput.email ) ||  errors.email ? "border-red-400" : "border-[#353a52]"
+          } focus:border-[#16f2b3]`}
           maxLength="100"
           value={userInput.email}
-          onChange={(e) =>
-            setUserInput({ ...userInput, email: e.target.value })
-          }
-          onBlur={() => {
-            checkRequired();
-            setError({ ...error, email: !isValidEmail(userInput.email) });
-          }}
+          onChange={(e) => setUserInput({ ...userInput, email: e.target.value })}
         />
-        {error.email && (
-          <p className="text-sm text-red-400">Please provide a valid email!</p>
-        )}
+        {errors.email && <p className="text-sm text-red-400">{errors.email}</p>}
       </div>
 
       <div className="flex flex-col gap-2">
         <label className="text-sm">Your Message:</label>
         <textarea
-          className="bg-[#10172d] border rounded-md border-[#353a52] focus:border-[#16f2b3] px-3 py-2"
-          required
+          className={`bg-[#10172d] border rounded-md px-3 py-2 ${
+            errors.required && !userInput.message ? "border-red-400" : "border-[#353a52]"
+          } focus:border-[#16f2b3]`}
           rows="4"
           maxLength="500"
           value={userInput.message}
-          onChange={(e) =>
-            setUserInput({ ...userInput, message: e.target.value })
-          }
-          onBlur={checkRequired}
+          onChange={(e) => setUserInput({ ...userInput, message: e.target.value })}
         />
       </div>
 
-      {error.required && (
-        <p className="text-sm text-red-400">All fields are required!</p>
+      {errors.required && (
+        <p className="text-sm text-red-400">{errors.required}</p>
       )}
 
       <button
         type="submit"
-        className="flex items-center gap-2 justify-center bg-gradient-to-r from-pink-500 to-violet-600 text-white py-2 rounded-full hover:bg-opacity-90 transition-all duration-200"
+        className={`flex items-center gap-2 justify-center bg-gradient-to-r from-pink-500 to-violet-600 text-white py-2 rounded-full hover:bg-opacity-90 transition-all duration-200 ${
+          isLoading ? "opacity-70 cursor-not-allowed" : ""
+        }`}
         disabled={isLoading}
       >
         {isLoading ? (
