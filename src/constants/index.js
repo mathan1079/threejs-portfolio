@@ -66,14 +66,14 @@ export const navLinks = [
 const personalDetails = {
   name: "MathanKumar",
   full_name: "MathanKumar Sengotuvel",
-  roles: ["Android Developer", "Flutter Developer", "Embedded Systems Engineer"],
+  roles: ["Android Developer", "Web Developer", "Flutter Developer", "Embedded Systems Engineer"],
   description:
     "Experienced in designing, developing, and optimizing high-quality mobile applications as an **Android Developer**, building cross-platform solutions using Flutter as a **Flutter Developer**, and developing hardware-integrated solutions and real-time systems as an **Embedded Systems Engineer**.",
   email: "info@mathankumar.dev",
   linkedin: "https://www.linkedin.com/in/mathan1079/",
   github: "https://github.com/mathan1079",
   github_username: "mathan1079",
-  resume_link: "https://drive.usercontent.google.com/u/0/uc?id=1ujBXNrzEFgDJYZE8zGM_GVJwiux8viRv", //remove params Ex: ?view=preview and last /
+  //resume_link: "https://drive.usercontent.google.com/u/0/uc?id=1ujBXNrzEFgDJYZE8zGM_GVJwiux8viRv", //remove params Ex: ?view=preview and last /
   fav_emoji: "💜",
 };
 

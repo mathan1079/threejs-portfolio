@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="w-full flex justify-center items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
           <p className="font-poppins font-normal text-[11px] leading-[27px] text-white mb-5 sm:text-[16px]">
             <span className="text-gray-500 text-sm">
-              &copy; {year} | Made with 💡 and {personalDetails.fav_emoji} by{" "}
+              &copy; {year} {" "}
               {personalDetails.name}
             </span>
           </p>
