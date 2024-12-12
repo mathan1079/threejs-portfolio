@@ -64,15 +64,15 @@ export const navLinks = [
 ];
 
 const personalDetails = {
-  name: "Gokul C",
-  full_name: "Gokul Chandrasekaran",
-  roles: ["Software Developer", "Backend Developer", "Python Developer"],
+  name: "MathanKumar",
+  full_name: "MathanKumar Sengotuvel",
+  roles: ["Android Developer", "Flutter Developer", "Embedded Systems Engineer"],
   description:
-    "Dynamic Software Developer skilled in building high-performance APIs,scalable microservices, and real-time image processing using Python,FastAPI, and PostgreSQL.Specializes in database optimization andautomation to boost efficiency and reliability.Collaborativeproblem-solver with a track record of delivering scalable,business-aligned solutions.",
-  email: "gggokul865@gmail.com",
-  linkedin: "https://www.linkedin.com/in/gokul-dev/",
-  github: "https://github.com/G0kulC",
-  github_username: "G0kulC",
+    "Experienced in designing, developing, and optimizing high-quality mobile applications as an **Android Developer**, building cross-platform solutions using Flutter as a **Flutter Developer**, and developing hardware-integrated solutions and real-time systems as an **Embedded Systems Engineer**.",
+  email: "info@mathankumar.dev",
+  linkedin: "https://www.linkedin.com/in/mathan1079/",
+  github: "https://github.com/mathan1079",
+  github_username: "mathan1079",
   resume_link: "https://drive.usercontent.google.com/u/0/uc?id=1ujBXNrzEFgDJYZE8zGM_GVJwiux8viRv", //remove params Ex: ?view=preview and last /
   fav_emoji: "💜",
 };
@@ -127,18 +127,6 @@ const awards = [
 ];
 
 const technologies = [
-  {
-    name: "Python",
-    icon: python,
-  },
-  {
-    name: "Django",
-    icon: django,
-  },
-  {
-    name: "FastAPI",
-    icon: fastapi,
-  },
   {
     name: "PostgreSQL",
     icon: postgresql,
@@ -409,27 +397,27 @@ const projects = [
 
 const socialLinks = [
   {
-    username: "gokul_dev",
+    username: "Mathankumar",
     platform: "LinkedIn",
-    url: "https://www.linkedin.com/in/gokul-dev",
+    url: "https://www.linkedin.com/in/mathan1079/",
     image: linkedin,
   },
   {
-    username: "Gokul C",
+    username: "MathanKumar",
     platform: "Github",
-    url: "https://github.com/G0kulC",
+    url: "https://github.com/mathan1079",
     image: github_icon,
   },
   {
-    username: "gggokul865@gmail.com",
+    username: "info@mathankumar.dev",
     platform: "Email",
-    url: "mailto:gggokul865@gmail",
+    url: "mailto:info@mathankumar.dev",
     image: gmail,
   },
   {
-    username: "dev._gokul",
+    username: "mathan1079_official",
     platform: "Instagram",
-    url: "https://www.instagram.com/dev._gokul/",
+    url: "https://www.instagram.com/mathan1079_official/",
     image: instagram,
   },
 ];
